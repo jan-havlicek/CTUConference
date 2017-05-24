@@ -1,0 +1,103 @@
+.contact-list-wrapper {
+  width: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: fixed;
+  top: $header-height;
+  left: 0;
+  transition: width 0.5s ease-in;
+  z-index: 9;
+  height: 100%;
+  background: $color-basic;
+
+  @media screen and (min-width: 768px) {
+	width: $contact-list-width;
+  }
+
+  &.displayed {
+	width: $contact-list-width;
+  }
+}
+
+.contact-list {
+  height: 100%;
+  border-bottom: 1px solid $dove-gray;
+  width: $contact-list-width;
+
+  .ui-widget-content {
+	border: 0;
+	background: $color-basic;
+  }
+
+  h3 {
+	margin: 0;
+	padding: 20px 15px 15px 25px;
+	color: $silver-chalice;
+	font: $strong-font;
+	background: $color-basic;
+  }
+
+  .contact-item {
+	&.group {
+	  position: relative;
+	}
+
+	.ui-datalist-data {
+	  li {
+		background: $color-basic;
+		position: relative;
+	  }
+	}
+
+	.ui-datalist-data li,
+	&.group {
+
+	  a {
+		display: block;
+		width: 94%;
+		margin: 0 3%;
+		padding: 15px;
+		border-bottom: 1px $mine-shaft solid;
+		box-shadow: 0px 1px 0px $dove-gray;
+		font: $basic-font;
+		color: $silver-chalice;
+		margin-bottom: 5px;
+	  }
+
+	  .activity-indicators {
+
+		.indicator-state {
+		  position: absolute;
+		  top: 20px;
+		  right: 20px;
+
+		  &.online {
+			width: 10px;
+			height: 10px;
+			background: $goblin;
+			display: block;
+			border-radius: 5px;
+		  }
+
+		  &.transmission {
+			width: 20px;
+			height: 20px;
+			margin-top: -6px;
+
+			svg {
+			  width: 100%;
+			  height: 100%;
+			  fill: $mantis;
+			  stroke: $mantis;
+			  stroke-width: 1px;
+			}
+		  }
+		}
+	  }
+	}
+  }
+
+  button {
+	margin: 20px;
+  }
+}

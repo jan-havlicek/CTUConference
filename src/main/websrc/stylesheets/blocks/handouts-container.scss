@@ -1,0 +1,101 @@
+@keyframes blink {
+  0%   {opacity: 1}
+  100% {opacity: 0}
+}
+
+.handouts-container {
+  position: relative;
+
+  .handouts {
+	position: relative;
+
+	canvas {
+	  display: block;
+	  margin-right: -1px;
+	}
+  }
+
+  .handouts-navigation {
+	position: absolute;
+	height: 63px;
+	bottom: 0;
+	background: rgba(150, 150, 150, 0.4);
+	padding: 9px 20px 15px;
+	text-align: right;
+	opacity: 1;
+	transition: opacity 0.5s ease-in;
+	float: right;
+	width: 100%;
+
+	&.hidden {
+	  opacity: 0;
+	  transition: opacity 0.5s ease-in;
+	}
+
+	button {
+	  background: white;
+	  width: 40px;
+	  height: 40px;
+	  border-radius: 20px;
+	  box-shadow: 1px 1px 1px rgba(33, 33, 33, 0.3);
+	  position: relative;
+
+	  &:hover {
+		background: #eee;
+	  }
+
+	  &:after {
+		content: "";
+		width: 10px;
+		height: 10px;
+		display: block;
+		transform: rotate(45deg);
+		position: absolute;
+		top: 15px;
+		left: 13px;
+	  }
+
+	  &.prev {
+		&:after {
+		  border-left: 2px solid $dove-gray;
+		  border-bottom: 2px solid $dove-gray;
+		  top: 15px;
+		  left: 17px;
+		}
+	  }
+
+	  &.next {
+		&:after {
+		  border-top: 2px solid $dove-gray;
+		  border-right: 2px solid $dove-gray;
+		}
+	  }
+
+	  &.sync {
+		position: relative;
+
+		svg {
+		  width: 26px;
+		  height: 22px;
+		  position: absolute;
+		  top: 8px;
+		  left: 7px;
+		  fill: $dove-gray;
+		}
+
+		&.missed {
+		  svg {
+			fill: red;
+			opacity: 1;
+			animation: blink 0.5s ease-out .5s infinite alternate;
+		  }
+		}
+	  }
+
+	  &[disabled] {
+		background: rgba(200, 200, 200, 0.7);
+		border: #333;
+	  }
+	}
+  }
+}

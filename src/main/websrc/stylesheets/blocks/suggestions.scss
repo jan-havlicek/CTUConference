@@ -1,0 +1,28 @@
+.suggested-friends,
+.suggested-groups {
+  background: rgba($citrine-white, 0.7);
+  margin-top: 20px;
+  border-radius: 10px;
+  padding: 0 20px 20px;
+  max-width: 500px;
+
+  * {
+	background: none;
+  }
+
+  .ui-widget, .ui-widget-content, .ui-corner-all, .ui-widget-header {
+	background: none !important;
+  }
+
+}
+
+.contact-search {
+
+  .ui-widget, .ui-widget-content, .ui-corner-all, .ui-widget-header {
+	background: none !important;
+  }
+
+}
+a.ui-carousel-page-link {
+  display: none !important;
+}

@@ -1,0 +1,360 @@
+/*
+SCSS variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: $icon-home-width;
+}
+
+The large array-like variables contain all information about a single icon
+$icon-home: x y offset_x offset_y width height total_width total_height image_path;
+
+At the bottom of this section, we provide information about the spritesheet itself
+$spritesheet: width height image $spritesheet-sprites;
+*/
+$addition-icon-name: 'addition-icon';
+$addition-icon-x: 266px;
+$addition-icon-y: 0px;
+$addition-icon-offset-x: -266px;
+$addition-icon-offset-y: 0px;
+$addition-icon-width: 256px;
+$addition-icon-height: 256px;
+$addition-icon-total-width: 1320px;
+$addition-icon-total-height: 1320px;
+$addition-icon-image: '../images/sprite.png';
+$addition-icon: (266px, 0px, -266px, 0px, 256px, 256px, 1320px, 1320px, '../images/sprite.png', 'addition-icon', );
+$attach-2-icon-name: 'attach-2-icon';
+$attach-2-icon-x: 0px;
+$attach-2-icon-y: 798px;
+$attach-2-icon-offset-x: 0px;
+$attach-2-icon-offset-y: -798px;
+$attach-2-icon-width: 256px;
+$attach-2-icon-height: 256px;
+$attach-2-icon-total-width: 1320px;
+$attach-2-icon-total-height: 1320px;
+$attach-2-icon-image: '../images/sprite.png';
+$attach-2-icon: (0px, 798px, 0px, -798px, 256px, 256px, 1320px, 1320px, '../images/sprite.png', 'attach-2-icon', );
+$contact-icon-name: 'contact-icon';
+$contact-icon-x: 0px;
+$contact-icon-y: 266px;
+$contact-icon-offset-x: 0px;
+$contact-icon-offset-y: -266px;
+$contact-icon-width: 256px;
+$contact-icon-height: 256px;
+$contact-icon-total-width: 1320px;
+$contact-icon-total-height: 1320px;
+$contact-icon-image: '../images/sprite.png';
+$contact-icon: (0px, 266px, 0px, -266px, 256px, 256px, 1320px, 1320px, '../images/sprite.png', 'contact-icon', );
+$download-2-icon-name: 'download-2-icon';
+$download-2-icon-x: 266px;
+$download-2-icon-y: 266px;
+$download-2-icon-offset-x: -266px;
+$download-2-icon-offset-y: -266px;
+$download-2-icon-width: 256px;
+$download-2-icon-height: 256px;
+$download-2-icon-total-width: 1320px;
+$download-2-icon-total-height: 1320px;
+$download-2-icon-image: '../images/sprite.png';
+$download-2-icon: (266px, 266px, -266px, -266px, 256px, 256px, 1320px, 1320px, '../images/sprite.png', 'download-2-icon', );
+$download-3-icon-name: 'download-3-icon';
+$download-3-icon-x: 532px;
+$download-3-icon-y: 0px;
+$download-3-icon-offset-x: -532px;
+$download-3-icon-offset-y: 0px;
+$download-3-icon-width: 256px;
+$download-3-icon-height: 256px;
+$download-3-icon-total-width: 1320px;
+$download-3-icon-total-height: 1320px;
+$download-3-icon-image: '../images/sprite.png';
+$download-3-icon: (532px, 0px, -532px, 0px, 256px, 256px, 1320px, 1320px, '../images/sprite.png', 'download-3-icon', );
+$download-icon-name: 'download-icon';
+$download-icon-x: 532px;
+$download-icon-y: 266px;
+$download-icon-offset-x: -532px;
+$download-icon-offset-y: -266px;
+$download-icon-width: 256px;
+$download-icon-height: 256px;
+$download-icon-total-width: 1320px;
+$download-icon-total-height: 1320px;
+$download-icon-image: '../images/sprite.png';
+$download-icon: (532px, 266px, -532px, -266px, 256px, 256px, 1320px, 1320px, '../images/sprite.png', 'download-icon', );
+$fastforward-icon-name: 'fastforward-icon';
+$fastforward-icon-x: 0px;
+$fastforward-icon-y: 532px;
+$fastforward-icon-offset-x: 0px;
+$fastforward-icon-offset-y: -532px;
+$fastforward-icon-width: 256px;
+$fastforward-icon-height: 256px;
+$fastforward-icon-total-width: 1320px;
+$fastforward-icon-total-height: 1320px;
+$fastforward-icon-image: '../images/sprite.png';
+$fastforward-icon: (0px, 532px, 0px, -532px, 256px, 256px, 1320px, 1320px, '../images/sprite.png', 'fastforward-icon', );
+$fastrewind-icon-name: 'fastrewind-icon';
+$fastrewind-icon-x: 266px;
+$fastrewind-icon-y: 532px;
+$fastrewind-icon-offset-x: -266px;
+$fastrewind-icon-offset-y: -532px;
+$fastrewind-icon-width: 256px;
+$fastrewind-icon-height: 256px;
+$fastrewind-icon-total-width: 1320px;
+$fastrewind-icon-total-height: 1320px;
+$fastrewind-icon-image: '../images/sprite.png';
+$fastrewind-icon: (266px, 532px, -266px, -532px, 256px, 256px, 1320px, 1320px, '../images/sprite.png', 'fastrewind-icon', );
+$folder-icon-name: 'folder-icon';
+$folder-icon-x: 532px;
+$folder-icon-y: 532px;
+$folder-icon-offset-x: -532px;
+$folder-icon-offset-y: -532px;
+$folder-icon-width: 256px;
+$folder-icon-height: 256px;
+$folder-icon-total-width: 1320px;
+$folder-icon-total-height: 1320px;
+$folder-icon-image: '../images/sprite.png';
+$folder-icon: (532px, 532px, -532px, -532px, 256px, 256px, 1320px, 1320px, '../images/sprite.png', 'folder-icon', );
+$forward-icon-name: 'forward-icon';
+$forward-icon-x: 798px;
+$forward-icon-y: 0px;
+$forward-icon-offset-x: -798px;
+$forward-icon-offset-y: 0px;
+$forward-icon-width: 256px;
+$forward-icon-height: 256px;
+$forward-icon-total-width: 1320px;
+$forward-icon-total-height: 1320px;
+$forward-icon-image: '../images/sprite.png';
+$forward-icon: (798px, 0px, -798px, 0px, 256px, 256px, 1320px, 1320px, '../images/sprite.png', 'forward-icon', );
+$info-icon-name: 'info-icon';
+$info-icon-x: 798px;
+$info-icon-y: 266px;
+$info-icon-offset-x: -798px;
+$info-icon-offset-y: -266px;
+$info-icon-width: 256px;
+$info-icon-height: 256px;
+$info-icon-total-width: 1320px;
+$info-icon-total-height: 1320px;
+$info-icon-image: '../images/sprite.png';
+$info-icon: (798px, 266px, -798px, -266px, 256px, 256px, 1320px, 1320px, '../images/sprite.png', 'info-icon', );
+$movie-2-icon-name: 'movie-2-icon';
+$movie-2-icon-x: 798px;
+$movie-2-icon-y: 532px;
+$movie-2-icon-offset-x: -798px;
+$movie-2-icon-offset-y: -532px;
+$movie-2-icon-width: 256px;
+$movie-2-icon-height: 256px;
+$movie-2-icon-total-width: 1320px;
+$movie-2-icon-total-height: 1320px;
+$movie-2-icon-image: '../images/sprite.png';
+$movie-2-icon: (798px, 532px, -798px, -532px, 256px, 256px, 1320px, 1320px, '../images/sprite.png', 'movie-2-icon', );
+$movie-icon-name: 'movie-icon';
+$movie-icon-x: 0px;
+$movie-icon-y: 0px;
+$movie-icon-offset-x: 0px;
+$movie-icon-offset-y: 0px;
+$movie-icon-width: 256px;
+$movie-icon-height: 256px;
+$movie-icon-total-width: 1320px;
+$movie-icon-total-height: 1320px;
+$movie-icon-image: '../images/sprite.png';
+$movie-icon: (0px, 0px, 0px, 0px, 256px, 256px, 1320px, 1320px, '../images/sprite.png', 'movie-icon', );
+$pause-icon-name: 'pause-icon';
+$pause-icon-x: 266px;
+$pause-icon-y: 798px;
+$pause-icon-offset-x: -266px;
+$pause-icon-offset-y: -798px;
+$pause-icon-width: 256px;
+$pause-icon-height: 256px;
+$pause-icon-total-width: 1320px;
+$pause-icon-total-height: 1320px;
+$pause-icon-image: '../images/sprite.png';
+$pause-icon: (266px, 798px, -266px, -798px, 256px, 256px, 1320px, 1320px, '../images/sprite.png', 'pause-icon', );
+$pencil-icon-name: 'pencil-icon';
+$pencil-icon-x: 532px;
+$pencil-icon-y: 798px;
+$pencil-icon-offset-x: -532px;
+$pencil-icon-offset-y: -798px;
+$pencil-icon-width: 256px;
+$pencil-icon-height: 256px;
+$pencil-icon-total-width: 1320px;
+$pencil-icon-total-height: 1320px;
+$pencil-icon-image: '../images/sprite.png';
+$pencil-icon: (532px, 798px, -532px, -798px, 256px, 256px, 1320px, 1320px, '../images/sprite.png', 'pencil-icon', );
+$phone-call-icon-name: 'phone-call-icon';
+$phone-call-icon-x: 798px;
+$phone-call-icon-y: 798px;
+$phone-call-icon-offset-x: -798px;
+$phone-call-icon-offset-y: -798px;
+$phone-call-icon-width: 256px;
+$phone-call-icon-height: 256px;
+$phone-call-icon-total-width: 1320px;
+$phone-call-icon-total-height: 1320px;
+$phone-call-icon-image: '../images/sprite.png';
+$phone-call-icon: (798px, 798px, -798px, -798px, 256px, 256px, 1320px, 1320px, '../images/sprite.png', 'phone-call-icon', );
+$phone-call-reject-icon-name: 'phone-call-reject-icon';
+$phone-call-reject-icon-x: 1064px;
+$phone-call-reject-icon-y: 0px;
+$phone-call-reject-icon-offset-x: -1064px;
+$phone-call-reject-icon-offset-y: 0px;
+$phone-call-reject-icon-width: 256px;
+$phone-call-reject-icon-height: 256px;
+$phone-call-reject-icon-total-width: 1320px;
+$phone-call-reject-icon-total-height: 1320px;
+$phone-call-reject-icon-image: '../images/sprite.png';
+$phone-call-reject-icon: (1064px, 0px, -1064px, 0px, 256px, 256px, 1320px, 1320px, '../images/sprite.png', 'phone-call-reject-icon', );
+$phone-icon-name: 'phone-icon';
+$phone-icon-x: 1064px;
+$phone-icon-y: 266px;
+$phone-icon-offset-x: -1064px;
+$phone-icon-offset-y: -266px;
+$phone-icon-width: 256px;
+$phone-icon-height: 256px;
+$phone-icon-total-width: 1320px;
+$phone-icon-total-height: 1320px;
+$phone-icon-image: '../images/sprite.png';
+$phone-icon: (1064px, 266px, -1064px, -266px, 256px, 256px, 1320px, 1320px, '../images/sprite.png', 'phone-icon', );
+$phonebook-icon-name: 'phonebook-icon';
+$phonebook-icon-x: 1064px;
+$phonebook-icon-y: 532px;
+$phonebook-icon-offset-x: -1064px;
+$phonebook-icon-offset-y: -532px;
+$phonebook-icon-width: 256px;
+$phonebook-icon-height: 256px;
+$phonebook-icon-total-width: 1320px;
+$phonebook-icon-total-height: 1320px;
+$phonebook-icon-image: '../images/sprite.png';
+$phonebook-icon: (1064px, 532px, -1064px, -532px, 256px, 256px, 1320px, 1320px, '../images/sprite.png', 'phonebook-icon', );
+$play-icon-name: 'play-icon';
+$play-icon-x: 1064px;
+$play-icon-y: 798px;
+$play-icon-offset-x: -1064px;
+$play-icon-offset-y: -798px;
+$play-icon-width: 256px;
+$play-icon-height: 256px;
+$play-icon-total-width: 1320px;
+$play-icon-total-height: 1320px;
+$play-icon-image: '../images/sprite.png';
+$play-icon: (1064px, 798px, -1064px, -798px, 256px, 256px, 1320px, 1320px, '../images/sprite.png', 'play-icon', );
+$print-icon-name: 'print-icon';
+$print-icon-x: 0px;
+$print-icon-y: 1064px;
+$print-icon-offset-x: 0px;
+$print-icon-offset-y: -1064px;
+$print-icon-width: 256px;
+$print-icon-height: 256px;
+$print-icon-total-width: 1320px;
+$print-icon-total-height: 1320px;
+$print-icon-image: '../images/sprite.png';
+$print-icon: (0px, 1064px, 0px, -1064px, 256px, 256px, 1320px, 1320px, '../images/sprite.png', 'print-icon', );
+$rewind-icon-name: 'rewind-icon';
+$rewind-icon-x: 266px;
+$rewind-icon-y: 1064px;
+$rewind-icon-offset-x: -266px;
+$rewind-icon-offset-y: -1064px;
+$rewind-icon-width: 256px;
+$rewind-icon-height: 256px;
+$rewind-icon-total-width: 1320px;
+$rewind-icon-total-height: 1320px;
+$rewind-icon-image: '../images/sprite.png';
+$rewind-icon: (266px, 1064px, -266px, -1064px, 256px, 256px, 1320px, 1320px, '../images/sprite.png', 'rewind-icon', );
+$settings-3-icon-name: 'settings-3-icon';
+$settings-3-icon-x: 532px;
+$settings-3-icon-y: 1064px;
+$settings-3-icon-offset-x: -532px;
+$settings-3-icon-offset-y: -1064px;
+$settings-3-icon-width: 256px;
+$settings-3-icon-height: 256px;
+$settings-3-icon-total-width: 1320px;
+$settings-3-icon-total-height: 1320px;
+$settings-3-icon-image: '../images/sprite.png';
+$settings-3-icon: (532px, 1064px, -532px, -1064px, 256px, 256px, 1320px, 1320px, '../images/sprite.png', 'settings-3-icon', );
+$share-2-icon-name: 'share-2-icon';
+$share-2-icon-x: 798px;
+$share-2-icon-y: 1064px;
+$share-2-icon-offset-x: -798px;
+$share-2-icon-offset-y: -1064px;
+$share-2-icon-width: 256px;
+$share-2-icon-height: 256px;
+$share-2-icon-total-width: 1320px;
+$share-2-icon-total-height: 1320px;
+$share-2-icon-image: '../images/sprite.png';
+$share-2-icon: (798px, 1064px, -798px, -1064px, 256px, 256px, 1320px, 1320px, '../images/sprite.png', 'share-2-icon', );
+$zoom-seach-icon-name: 'zoom-seach-icon';
+$zoom-seach-icon-x: 1064px;
+$zoom-seach-icon-y: 1064px;
+$zoom-seach-icon-offset-x: -1064px;
+$zoom-seach-icon-offset-y: -1064px;
+$zoom-seach-icon-width: 256px;
+$zoom-seach-icon-height: 256px;
+$zoom-seach-icon-total-width: 1320px;
+$zoom-seach-icon-total-height: 1320px;
+$zoom-seach-icon-image: '../images/sprite.png';
+$zoom-seach-icon: (1064px, 1064px, -1064px, -1064px, 256px, 256px, 1320px, 1320px, '../images/sprite.png', 'zoom-seach-icon', );
+$spritesheet-width: 1320px;
+$spritesheet-height: 1320px;
+$spritesheet-image: '../images/sprite.png';
+$spritesheet-sprites: ($addition-icon, $attach-2-icon, $contact-icon, $download-2-icon, $download-3-icon, $download-icon, $fastforward-icon, $fastrewind-icon, $folder-icon, $forward-icon, $info-icon, $movie-2-icon, $movie-icon, $pause-icon, $pencil-icon, $phone-call-icon, $phone-call-reject-icon, $phone-icon, $phonebook-icon, $play-icon, $print-icon, $rewind-icon, $settings-3-icon, $share-2-icon, $zoom-seach-icon, );
+$spritesheet: (1320px, 1320px, '../images/sprite.png', $spritesheet-sprites, );
+
+/*
+The provided mixins are intended to be used with the array-like variables
+
+.icon-home {
+  @include sprite-width($icon-home);
+}
+
+.icon-email {
+  @include sprite($icon-email);
+}
+
+Example usage in HTML:
+
+`display: block` sprite:
+<div class="icon-home"></div>
+
+To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+
+// CSS
+.icon {
+  display: inline-block;
+}
+
+// HTML
+<i class="icon icon-home"></i>
+*/
+@mixin sprite-width($sprite) {
+  width: nth($sprite, 5);
+}
+
+@mixin sprite-height($sprite) {
+  height: nth($sprite, 6);
+}
+
+@mixin sprite-position($sprite) {
+  $sprite-offset-x: nth($sprite, 3);
+  $sprite-offset-y: nth($sprite, 4);
+  background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+@mixin sprite-image($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url(#{$sprite-image});
+}
+
+@mixin sprite($sprite) {
+  @include sprite-image($sprite);
+  @include sprite-position($sprite);
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+}
+
+/*
+The `sprites` mixin generates identical output to the CSS template
+  but can be overridden inside of SCSS
+
+@include sprites($spritesheet-sprites);
+*/
+@mixin sprites($sprites) {
+  @each $sprite in $sprites {
+    $sprite-name: nth($sprite, 10);
+    .#{$sprite-name} {
+      @include sprite($sprite);
+    }
+  }
+}

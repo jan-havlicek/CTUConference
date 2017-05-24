@@ -1,0 +1,31 @@
+.conversation {
+  nav {
+	button {
+	  border: 0;
+	  box-shadow: 0;
+	  display: inline-block;
+	  width: 50px;
+	  height: 50px;
+
+	  &.invoke-voice-call {
+		background: transparent url('../images/icons/phone-call-icon.png');
+		background-size: contain;
+	  }
+
+	  &.invoke-video-call {
+		background: transparent url('../images/icons/movie-icon.png');
+		background-size: contain;
+	  }
+
+	  &.invoke-presentation-call {
+		background: transparent url('../images/icons/movie-2-icon.png');
+		background-size: contain;
+	  }
+
+	  &[disabled] {
+		filter: grayscale(100%);
+		opacity: 0.5;
+	  }
+	}
+  }
+}

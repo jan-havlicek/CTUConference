@@ -1,0 +1,99 @@
+$call-navbar-size: 40px;
+
+.media-container {
+  display: block;
+
+  video {
+	display: block;
+  }
+
+  ul {
+	display: block;
+	list-style: none;
+	text-align: center;
+
+	li {
+	  display: inline-block;
+
+	  .participant-media {
+		background: $cod-gray;
+		border: 5px transparent solid;
+		margin: 3px;
+		position: relative;
+
+		&.is-speaking {
+		  border-color: $shakespeare;
+		}
+
+		.participant-name {
+		  color: white;
+		  float: right;
+		  font-size: 13px;
+		  position: absolute;
+		  left: 0px;
+		  top: 0;
+		  font-weight: bold;
+		}
+	  }
+	}
+  }
+
+  .my-media {
+	position: absolute;
+	bottom: 13px;
+	left: 13px;
+	border: 5px white solid;
+	width: 40%;
+	max-width: 160px;
+	min-width: 90px;
+
+	@include mq($from: medium) {
+	  width: 15%;
+	}
+
+	video {
+	  width: 100%;
+	}
+  }
+
+  &.thumbnail-view {
+	ul {
+	  position: absolute;
+	  bottom: 0;
+	  width: 100%;
+
+	  li {
+		width: 200px !important;
+		height: 150px !important;
+		overflow: hidden;
+
+		&.active {
+		  position: absolute;
+		  bottom: 100%;
+		  left: 0;
+		  width: 100% !important;
+		  height: calc(100vh - 40px - 10px - 196px) !important;
+
+		  video {
+			width: calc(100% - 5px) !important;
+			height: calc(100% - 2px) !important;
+		  }
+		}
+
+		.participant-media {
+		  width: 100% !important;
+		  height: 100% !important;
+
+		  video {
+			width: 100% !important;
+			height: 100% !important;
+		  }
+		}
+	  }
+	}
+
+	.my-media {
+	  bottom: 163px;
+	}
+  }
+}

@@ -1,0 +1,111 @@
+.dashboard {
+
+  .welcome-message {
+	font-size: 18px;
+	line-height: 30px;
+	color: silver;
+	text-align: center;
+	padding-bottom: 20px;
+	border-bottom: 1px silver solid;
+	margin-bottom: 30px;
+  }
+
+  .ui-carousel-header,
+  h2 {
+	position: relative;
+	font: $subheadline-font;
+	margin: 10px 0px 20px;
+	background: none;
+	padding: 0;
+  }
+
+  .ui-carousel-header select {
+	margin-top: -7px;
+	margin-right: 70px;
+	font-size: 18px;
+  }
+
+  .ui-carousel-button {
+	&.ui-carousel-next-button,
+	&.ui-carousel-prev-button {
+	  width: 12px;
+	  height: 12px;
+	  transform: rotate(45deg);
+	  position: absolute;
+	  top: 20px;
+	  right: 20px;
+	  border-top: 1px $tundora solid;
+	  border-right: 1px $tundora solid;
+	  background: none;
+	}
+
+	&.ui-carousel-prev-button {
+	  right: 60px;
+	  border: 0;
+	  border-bottom: 1px $dove-gray solid;
+	  border-left: 1px $dove-gray solid;
+	}
+  }
+
+  .ui-carousel.ui-widget.ui-widget-content {
+	margin-top: 20px;
+  }
+
+  button {
+	background: none;
+	border: 0;
+	padding: 0 0 0 20px;
+	position: relative;
+	color: $color-primary;
+	display: inline;
+	height: auto;
+	margin-top: 10px;
+
+	&:hover {
+	  background: none;
+	  color: $color-primary-active;
+
+	  &:before {
+		border-color: $color-primary-active;
+	  }
+	}
+
+	&:before {
+	  content: "";
+	  display: block;
+	  width: 8px;
+	  height: 8px;
+	  border-top: 1px $color-primary solid;
+	  border-right: 1px $color-primary solid;
+	  transform: rotate(45deg);
+	  position: absolute;
+	  top: 6px;
+	  left: 0;
+	}
+  }
+
+  .ongoing-calls,
+  .contact-search,
+  .suggested-friends,
+  .suggested-groups {
+	margin: 20px;
+	padding: 0 10px 20px 10px;
+	border-bottom: 1px silver solid;
+	max-width: 470px;
+	border-radius: 0;
+	background: white !important;
+  }
+
+  .dashboard-block {
+	float: left;
+	width: 50%;
+	min-width: 500px;
+  }
+
+  .contact.requested span {
+	margin-top: 10px;
+	display: inline-block;
+	color: #8DA700;
+	font-weight: bold;
+  }
+}

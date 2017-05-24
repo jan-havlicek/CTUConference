@@ -1,0 +1,9 @@
+.ui-messages {
+  display: block;
+  position: fixed;
+  top: 0px;
+  left: 0;
+  width: calc(100% - 10px);
+  z-index: 11;
+  margin: 5px;
+}

@@ -1,0 +1,83 @@
+
+<beans
+    xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+    xsi:schemaLocation=" http://www.springframework.org/schema/beans
+                http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+                http://www.springframework.org/schema/context
+                http://www.springframework.org/schema/context/spring-context-4.0.xsd
+                http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+                http://www.springframework.org/schema/mvc
+        		http://www.springframework.org/schema/mvc/spring-mvc.xsd
+                http://www.springframework.org/schema/aop
+                http://www.springframework.org/schema/aop/spring-aop-4.0.xsd" default-autowire="byType">
+
+    <!-- Pro konfiguraci Spring beans budou pouzity take anotace -->
+    <context:annotation-config />
+    <!-- Spring beans budou hledany v balicku cz.cvut.kbss (podpora anotaci @Component, @Repository, @Service) -->
+    <context:component-scan base-package="cz.ctu"/>
+    <!-- Podpora anotace @Configurable -->
+    <context:spring-configured />
+
+    <!-- Property files -->
+    <!--bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property value="locations">
+            <list>
+                <value>/WEB-INF/properties/jdbc.properties</value>
+                <value>/WEB-INF/properties/jpa.properties</value>
+            </list>
+        </property>
+    </bean-->
+    <!-- Connection pool -->
+    <!--bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+        <property value="driverClassName" value="${jdbc.driverClassName}"/>
+        <property value="url" value="${jdbc.url}"/>
+        <property value="username" value="${jdbc.username}"/>
+        <property value="password" value="${jdbc.password}"/>
+        <property value="initialSize" value="2" />
+        <property value="minIdle" value="2" />
+    </bean-->
+
+    <!--bean id="entityManagerFactory"
+            class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"
+            p:dataSource-ref="dataSource" p:persistence-xml-location="classpath*:META-INF/test-persistence.xml"
+            p:persistence-unit-value="RealPUName" p:jpaDialect-ref="jpaDialect"
+            p:jpaVendorAdapter-ref="jpaVendorAdapter" p:loadTimeWeaver-ref="weaver">
+    </bean-->
+
+    <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+        <property name="persistenceUnitName" value="ctuconference-persistence-unit" />
+        <property name="persistenceXmlLocation" value="META-INF/persistence.xml" />
+        <property name="jpaPropertyMap">
+            <map>
+                <entry key="eclipselink.weaving" value="false"/>
+            </map>
+        </property>
+    </bean>
+
+	<bean id="multipartResolver"
+				class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<!-- setting maximum upload size -->
+		<property name="maxUploadSize" value="20000000" />
+
+	</bean>
+
+
+	<bean id="txManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+        <property name="entityManagerFactory" ref="entityManagerFactory" />
+    </bean>
+
+	<mvc:annotation-driven />
+
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/jsp/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+
+    <!-- Podpora deklarativni demarkace transakci - anotace @Transactional-->
+    <tx:annotation-driven transaction-manager="txManager" />
+
+</beans>

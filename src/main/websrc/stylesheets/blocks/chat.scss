@@ -1,0 +1,95 @@
+.chat {
+  height: calc(100vh - #{$header-height});
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  ul {
+	list-style: none;
+	margin: 110px 0 80px;
+
+	&:after {
+	  content: "";
+	  height: 0;
+	  visibility: hidden;
+	  clear: both;
+	  display: block;
+	}
+
+	li.chat-message {
+	  width: 80%;
+	  border-radius: 10px;
+	  padding: 16px;
+	  position: relative;
+	  margin: 13px;
+	  clear: both;
+
+	  &.incoming {
+		background: $citrine-white;
+		float: left;
+	  }
+
+	  &.outgoing {
+		background: $gallery;
+		float: right;
+	  }
+
+	  time {
+		font-size: 13px;
+		position: absolute;
+		top: -20px;
+		right: 20px;
+	  }
+
+	  .message-author {
+		font-size: 13px;
+		position: absolute;
+		top: -20px;
+	  }
+
+	  .attachment-list {
+		margin: 0;
+
+		li {
+		  display: inline-block;
+		  max-width: 240px;
+		  margin: 0 2px;
+
+		  &.slideshow {
+			max-width: 100%;
+			width: 100%;
+		  }
+		}
+	  }
+	}
+  }
+
+  .empty-chat {
+	margin: 160px 20px 0;
+	text-align: center;
+	font-size: 40px;
+	color: #ddd;
+  }
+
+  .message-input {
+	clear: both;
+	padding: 10px;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	background: rgba(255, 255, 255, 0.7);
+	border-top: 1px #eee solid;
+
+	@media screen and (min-width: 768px) {
+	  position: absolute;
+	  padding: 20px;
+	}
+
+	input[type=text] {
+	  width: calc(100% - 105px);
+	}
+
+	button {
+	  width: 100px;
+	}
+  }
+}

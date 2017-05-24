@@ -1,0 +1,106 @@
+
+.call-layout {
+  display: block;
+  position: relative;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#333333+0,4d4d4d+100 */
+  background: #333333; /* Old browsers */
+  background: -moz-linear-gradient(45deg,  #333333 0%, #4d4d4d 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(45deg,  #333333 0%,#4d4d4d 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(45deg,  #333333 0%,#4d4d4d 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333333', endColorstr='#4d4d4d',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  border: 1px #333 solid;
+  overflow: hidden;
+
+  &.basic {
+	.media-container {
+	  width: 100%;
+	  height: 100%;
+	}
+  }
+
+  &.split {
+	.media-container {
+	  height: 100%;
+	  width: 50%;
+	  float: left;
+	  display: flex;
+	  align-items: center;
+	  position: relative;
+	}
+
+	.handouts-block {
+	  width: 50%;
+	  display: flex;
+	  height: 100%;
+	  align-items: center;
+
+	  & > * {
+		margin-top: -4px;
+		width: 100%;
+	  }
+	}
+  }
+
+  &.media-first {
+	.media-container {
+	  width: 100%;
+	  height: 100%;
+	}
+
+	.handouts-block {
+	  width: 48vh;
+	  height: 36vh;
+	  position: absolute;
+	  bottom: 0;
+	  right: 0;
+
+	  .handouts-container {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+	  }
+	}
+  }
+
+  &.handouts-first {
+	.media-container {
+	  width: 48vh;
+	  height: 36vh;
+	  overflow: hidden;
+	  position: absolute;
+	  bottom: 0;
+	  right: 0;
+	  z-index: 1;
+	  display: block;
+	}
+	.handouts-block {
+	  height: 100%;
+	  width: 100%;
+
+	  canvas {
+		max-height: calc(100vh - 90px);
+		margin: 0 auto;
+	  }
+
+	  .handouts-container {
+		.handouts-navigation {
+		  text-align: center;
+		}
+	  }
+	}
+  }
+}
+
+.horizontal-navigation {
+  .call-layout {
+	height: calc(100% - #{$call-navbar-size} - 10px);
+	margin-top: 10px;
+  }
+}
+
+.vertical-navigation {
+  .call-layout {
+	height: 100%;
+	width: calc(100% - #{$call-navbar-size})
+  }
+}

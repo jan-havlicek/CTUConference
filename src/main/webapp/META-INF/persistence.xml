@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.0" xmlns="http://java.sun.com/xml/ns/persistence"
+			 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+			 xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+	<persistence-unit name="ctuconference-persistence-unit" transaction-type="RESOURCE_LOCAL">
+		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+		<class>cz.ctu.ctuconference.user.AppRole</class>
+		<class>cz.ctu.ctuconference.user.AppUser</class>
+		<class>cz.ctu.ctuconference.conversation.domain.Conversation</class>
+		<class>cz.ctu.ctuconference.conversation.domain.PrivateConversation</class>
+		<class>cz.ctu.ctuconference.conversation.domain.MultichatConversation</class>
+		<class>cz.ctu.ctuconference.conversation.domain.GroupConversation</class>
+		<class>cz.ctu.ctuconference.conversation.domain.GroupEventConversation</class>
+		<class>cz.ctu.ctuconference.conversation.domain.GroupTopicConversation</class>
+		<class>cz.ctu.ctuconference.friendship.domain.Friendship</class>
+		<class>cz.ctu.ctuconference.conversation.domain.Message</class>
+		<class>cz.ctu.ctuconference.group.domain.Group</class>
+		<class>cz.ctu.ctuconference.group.domain.GroupEvent</class>
+		<class>cz.ctu.ctuconference.group.domain.GroupTopic</class>
+		<class>cz.ctu.ctuconference.group.domain.GroupMembership</class>
+		<class>cz.ctu.ctuconference.attachment.domain.Attachment</class>
+		<class>cz.ctu.ctuconference.notification.domain.Notification</class>
+		<class>cz.ctu.ctuconference.notification.domain.GroupMembershipNotification</class>
+		<class>cz.ctu.ctuconference.notification.domain.FriendshipNotification</class>
+		<exclude-unlisted-classes>false</exclude-unlisted-classes>
+		<validation-mode>NONE</validation-mode>
+		<properties>
+			<property name="javax.persistence.jdbc.url"
+					  value="jdbc:mysql://localhost:3306/videoconference?useUnicode=yes&amp;characterEncoding=UTF-8"/>
+			<property name="javax.persistence.jdbc.password" value="video-conference"/>
+			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+			<property name="javax.persistence.jdbc.user" value="video-conference"/>
+		</properties>
+	</persistence-unit>
+</persistence>

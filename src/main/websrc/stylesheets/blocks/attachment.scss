@@ -1,0 +1,94 @@
+.attachment {
+  max-width: 240px;
+  min-height: 110px;
+  padding: 10px;
+  border-radius: 3px;
+  border: 1px #ccc solid;
+  background: rgba(255, 255, 255, 0.5);
+
+  &.slideshow {
+	max-width: 100%;
+	width: 600px;
+  }
+
+  header {
+	word-break: break-all;
+	font-size: 14px;
+	font-weight: normal;
+	margin-bottom: 5px;
+  }
+
+  .attachment-actions {
+	.download-file {
+	  background: url("../images/icons/download-3-icon.png");
+	  border: 0;
+	  background-size: cover;
+	  display: inline-block;
+	  width: 40px;
+	  height: 40px;
+	  vertical-align: middle;
+	  margin-bottom: 10px;
+	}
+
+	.show-slideshow {
+	  background: url("../images/icons/presentation.png");
+	  border: 0;
+	  background-size: cover;
+	  vertical-align: middle;
+	  width: 0;
+	  margin-bottom: 10px;
+	}
+  }
+  .attachment-handouts {
+	position: relative;
+
+	&.fullscreen {
+	  width: 100vw;
+	  height: 100vh;
+
+	  .handouts-container {
+		background: black;
+		width: 100vw;
+		height: 100vh;
+
+		canvas {
+		  max-height: 100vh;
+		  margin: 0 auto;
+		}
+	  }
+	}
+
+	button.fullscreen {
+	  position: absolute;
+	  bottom: 15px;
+	  left: calc(50% - 20px);
+	  background: white;
+	  border-radius: 20px;
+	  width: 40px;
+	  height: 40px;
+	  box-shadow: 1px 1px 1px grey;
+	  transition: background-color 0.3s ease-in, opacity 0.5s ease-in;
+	  opacity: 1;
+
+	  &.hidden {
+		opacity: 0;
+	  }
+
+	  svg {
+		width: 20px;
+		height: 20px;
+		position: absolute;
+		top: 10px;
+		left: 10px;
+		fill: $color-basic;
+	  }
+
+	  &:hover {
+		background: #eee;
+		transition: background-color 0.3s ease-in;
+	  }
+	}
+  }
+
+
+}

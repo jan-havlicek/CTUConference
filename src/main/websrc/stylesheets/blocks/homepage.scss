@@ -1,0 +1,119 @@
+section {
+  width: 100%;
+
+  .inner {
+	width: 100%;
+	max-width: $screen-lg-min;
+  }
+}
+
+.start-using {
+  height: 60vh;
+  min-height: 400px;
+  max-height: 600px;
+  background: url(../images/conference-background.jpg) center center no-repeat;
+  background-size: cover;
+
+  .inner {
+	height: 100%;
+	position: relative;
+
+	& > h2 {
+	  width: 50%;
+	  color: white;
+	  text-shadow: 1px 1px black;
+	  position: absolute;
+	  bottom: 60px;
+	}
+  }
+
+  .hp-action {
+	background: rgba(255,255,255,0.8);
+	display: block;
+	padding: 20px;
+	position: absolute;
+	right: 60px;
+	bottom: 50px;
+
+	a {
+	  color: $limeade;
+	  border-bottom: 1px $limeade solid;
+	  position: absolute;
+	  top: 50px;
+	  right: 25px;
+	  cursor: pointer;
+	}
+
+	input[type=text],
+	input[type=password],
+	input[type=email] {
+	  width: 260px;
+	}
+
+	input.first-name {
+	  width: 90px;
+	}
+
+	input.last-name {
+	  width: 166px;
+	}
+
+	button {
+	  margin-left: 104px;
+	}
+
+	.error-msg {
+	  color: red;
+	  font-weight: 500;
+	  /*position: absolute;
+	  background: $citrine-white;
+	  opacity: 0.8;
+	  margin-right: 10px;
+	  padding: 20px;
+	  border-radius: 8px;
+
+	  &:before {
+		content: '';
+		display: block;
+		width: 7px;
+		height: 7px;
+		background: $citrine-white;
+		transform: rotate(45deg);
+		position: absolute;
+		right: 40px;
+		top: -5px;
+	  }*/
+	}
+  }
+}
+
+.why-using {
+  h2 {
+	color: $color-primary-active;
+	margin: 50px 0 20px;
+  }
+}
+
+ul.basic {
+  list-style: none;
+
+  li {
+	line-height: 34px;
+	position: relative;
+	padding-left: 30px;
+
+	&:before {
+	  content: '';
+	  display: block;
+	  width: 8px;
+	  height: 8px;
+	  transform: rotate(45deg);
+	  border-top: 2px $color-primary solid;
+	  border-right: 2px $color-primary solid;
+	  position: absolute;
+	  top: 11px;
+	  left: 10px;
+	}
+  }
+
+}

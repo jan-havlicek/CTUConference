@@ -1,0 +1,82 @@
+$form-item-height: 40px;
+
+form {
+  div {
+	margin: 7px 0;
+  }
+}
+
+input[type=text],
+input[type=tel],
+input[type=email],
+input[type=password],
+input[type=number],
+select {
+  border: 1px #d4d4d4 solid;
+  box-shadow: inset 1px 1px 1px #d4d4d4;
+  height: $form-item-height;
+  border-radius: 4px;
+  color: $color-basic;
+  padding: 0 10px;
+}
+
+input[type=submit],
+button,
+.button {
+  background: $color-primary;
+  padding: 0 20px;
+  height: $form-item-height;
+  line-height: $form-item-height;
+  border: 0;
+  border-bottom: 1px $color-primary-active solid;
+  border-radius: 3px;
+
+  &:not([disabled]) {
+	&:hover {
+	  background: $color-primary-active;
+	}
+  }
+
+  &[disabled] {
+	background: $color-disabled;
+  }
+}
+
+.content {
+  .ui-dropdown {
+	&.ui-widget {
+	  border: 1px #ddd solid !important;
+	  border-radius: 4px !important;
+	}
+
+	.ui-dropdown-trigger {
+	  width: 32px !important;
+
+	  span {
+		width: 8px;
+		height: 8px;
+		border-right: 1px #4d4d4d solid;
+		border-top: 1px #4d4d4d solid;
+		display: block;
+		margin-left: 5px;
+		margin-top: 11px;
+		transform: rotate(135deg);
+
+		&.fa-caret-up {
+		  transform: rotate(-45deg);
+		  margin-top: 15px;
+		}
+	  }
+	}
+
+	.ui-dropdown-label {
+	  padding-right: 32px !important;
+	}
+  }
+
+  select {
+	border: 1px #d4d4d4 solid !important;
+	border-radius: 5px !important;
+  }
+
+}

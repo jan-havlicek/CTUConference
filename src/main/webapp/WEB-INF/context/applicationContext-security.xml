@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+             xmlns:beans="http://www.springframework.org/schema/beans"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://www.springframework.org/schema/beans
+                         http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+                         http://www.springframework.org/schema/security
+                         http://www.springframework.org/schema/security/spring-security-4.2.xsd">
+
+
+    <global-method-security secured-annotations="enabled" jsr250-annotations="enabled" pre-post-annotations="enabled">
+    </global-method-security>
+
+    <!--websocket-message-broker id="interceptor" same-origin-disabled="true">
+        <intercept-message pattern="/**" access="permitAll()"/>
+        <intercept-message type="SUBSCRIBE" access="permitAll()"/>
+        <intercept-message type="CONNECT" access="permitAll()"/>
+    </websocket-message-broker-->
+
+    <!-- UNPROTECTED RESOURCES -->
+    <http pattern="/favicon.ico" security="none"/>
+	<http pattern="/assets/**" security="none"/>
+	<http pattern="/app" security="none"/>
+
+    <http auto-config="true" use-expressions="false" disable-url-rewriting="false">
+        <csrf disabled="true"/>
+        <form-login login-page="/login" default-target-url="/index.xhtml" />
+        <!--intercept-url pattern="/index.xhtml" access="ROLE_LOGGED_USER" /-->
+		<intercept-url pattern="/" access="ROLE_ANONYMOUS,ROLE_LOGGED_USER" />
+		<intercept-url pattern="/login" access="ROLE_ANONYMOUS" />
+		<intercept-url pattern="/api/auth/login" access="ROLE_ANONYMOUS" />
+		<intercept-url pattern="/api/auth/register" access="ROLE_ANONYMOUS" />
+		<intercept-url pattern="/api/auth/token" access="ROLE_ANONYMOUS,ROLE_LOGGED_USER" />
+		<intercept-url pattern="/api/conversation/**" access="ROLE_ANONYMOUS,ROLE_LOGGED_USER" />
+        <!--<intercept-url pattern="/index.xhtml" access="ROLE_LOGGED_USER" />-->
+        <!--<intercept-url pattern="/*.xhtml" access="ROLE_LOGGED_USER" />-->
+        <intercept-url pattern="/**" access="ROLE_LOGGED_USER" />
+        <!--access-denied-handler error-page="/WEB-INF/error/access-denied.xhtml" /-->
+        <!--logout logout-url="/logout"/-->
+
+    </http>
+
+    <!-- manager responsible for loading user account with assigned roles -->
+    <authentication-manager alias="authenticationManager">
+        <authentication-provider ref="authenticationProvider" />
+    </authentication-manager>
+
+</beans:beans>

@@ -1,0 +1,57 @@
+
+$svg-icon-font-size: 10px !default;
+
+$svg-sprite-width: {{spriteWidth}}px;
+$svg-sprite-height: {{spriteHeight}}px;
+$svg-sprite-path: '/assets/images/svg-sprite.svg';
+{{#shapes}}
+$svg-{{base}}-name: '{{base}}';
+$svg-{{base}}-x: {{#invert}}{{position.absolute.x}}{{/invert}}px;
+$svg-{{base}}-y: {{#invert}}{{position.absolute.y}}{{/invert}}px;
+$svg-{{base}}-offset-x: {{position.absolute.x}}px;
+$svg-{{base}}-offset-y: {{position.absolute.y}}px;
+$svg-{{base}}-width: {{width.inner}}px;
+$svg-{{base}}-height: {{height.inner}}px;
+$svg-{{base}}-total-width: {{spriteWidth}}px;
+$svg-{{base}}-total-height: {{spriteHeight}}px;
+$svg-{{base}}-image: '/assets/images/svg-sprite.svg';
+$svg-{{base}}: ({{#invert}}{{position.absolute.x}}{{/invert}}px, {{#invert}}{{position.absolute.y}}{{/invert}}px, {{position.absolute.x}}px, {{position.absolute.y}}px, {{width.inner}}px, {{height.inner}}px, {{spriteWidth}}px, {{spriteHeight}}px, '/assets/images/svg-sprite.svg', '{{base}}', );
+{{/shapes}}
+
+@function px2em($px, $base-font-size: $svg-icon-font-size) {
+	@if unitless($px) {
+		@warn "Assuming #{$px} to be in pixels, attempting to convert it into pixels.";
+		@return px2em($px * 1px, $base-font-size);
+	} @else if unit($px) == em {
+		@return $px;
+	}
+	@return ($px / $base-font-size) * 1em;
+}
+
+@mixin svg-sprite-width($sprite) {
+	width: px2em(nth($sprite, 5));
+}
+
+@mixin svg-sprite-height($sprite) {
+	height: px2em(nth($sprite, 6));
+}
+
+@mixin svg-sprite-position($sprite) {
+	$sprite-offset-x: px2em(nth($sprite, 3));
+	$sprite-offset-y: px2em(nth($sprite, 4));
+	background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+@mixin svg-sprite-image($sprite) {
+	$sprite-image: nth($sprite, 9);
+	background-image: url(#{$sprite-image});
+}
+
+@mixin svg-sprite($sprite, $svg-basic-font-size: $svg-icon-font-size) {
+	font-size: $svg-basic-font-size;
+	background-size: px2em($svg-sprite-width) px2em($svg-sprite-height);
+	@include svg-sprite-image($sprite);
+	@include svg-sprite-position($sprite);
+	@include svg-sprite-width($sprite);
+	@include svg-sprite-height($sprite);
+}

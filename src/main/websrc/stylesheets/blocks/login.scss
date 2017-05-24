@@ -1,0 +1,15 @@
+section.login {
+  height: 60vh;
+  min-height: 400px;
+  max-height: 600px;
+  /*background: linear-gradient(150deg, lighten($citrine-white, 40%) 5%, $citrine-white);*/
+  background: url(../images/conference-background.jpg) center center no-repeat;
+  background-size: cover;
+
+  form {
+	background: rgba($white, 0.7);
+	width: 400px;
+	padding: 40px;
+	//border: 1px $color-primary solid;
+  }
+}

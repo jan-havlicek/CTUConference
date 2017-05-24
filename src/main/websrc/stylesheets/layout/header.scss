@@ -1,0 +1,78 @@
+.main-header {
+  width: 100%;
+  height: $header-height;
+  border-radius: 0;
+  color: $white;
+  border: 0;
+  border-bottom: 1px $mine-shaft solid;
+  background: $color-basic;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 12;
+  box-shadow: 1px 1px 1px $dove-gray;
+
+  .brand {
+	display: inline-block;
+	font: $headline-main-font;
+	height: 70px;
+	line-height: 70px;
+	vertical-align: middle;
+	padding: 0 20px;
+	color: $color-primary;
+	text-decoration: none;
+
+	&:hover {
+	  text-decoration: none;
+	  color: $olive;
+	}
+  }
+
+  nav {
+	display: inline-block;
+	float: right;
+	line-height: 40px;
+	vertical-align: middle;
+	border: 0;
+	background: rgba($white, 0.1);
+	color: $color-inverted;
+	padding: 0 20px;
+	margin: 14px;
+	border-radius: 10px;
+
+	.logged-user {
+	  margin-right: 15px;
+	  color: $silver-chalice;
+	  text-shadow: 0px 1px 0 $mine-shaft;
+	}
+
+	a {
+	  color: $color-primary;
+	  position: relative;
+	  padding-left: 12px;
+	  cursor: pointer;
+
+	  &:before {
+		width: 7px;
+		height: 6px;
+		display: inline-block;
+		content: "";
+		border-top: 1px #B5D301 solid;
+		border-right: 1px #B5D301 solid;
+		transform: rotate(45deg);
+		position: absolute;
+		top: 7px;
+		left: -2px;
+		color: $color-primary;
+	  }
+
+	  &:hover {
+		color: $color-primary-active;
+
+		&:before {
+		  color: $color-primary-active;
+		}
+	  }
+	}
+  }
+}

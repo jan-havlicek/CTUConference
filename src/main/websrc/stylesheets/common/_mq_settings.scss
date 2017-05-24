@@ -1,0 +1,7 @@
+
+$mq-breakpoints: (
+	xsmall: $screen-xs-min,
+	small:  $screen-sm-min,
+	medium: $screen-md-min,
+	large:  $screen-lg-min
+) !default;

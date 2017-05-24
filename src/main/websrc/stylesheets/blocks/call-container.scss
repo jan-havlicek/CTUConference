@@ -1,0 +1,518 @@
+
+@keyframes blink {
+  0%   {opacity: 1}
+  100% {opacity: 0}
+}
+
+$call-navbar-size: 40px;
+$call-bar-icon-size: 28px;
+
+.call-container {
+  padding: 20px;
+  position: fixed;
+  z-index: 13;
+
+  .call-navigation-bar {
+	box-sizing: content-box;
+	background: #eee;
+	box-shadow: 0px 1px 4px grey;
+	//position: absolute;
+	//right: 0;
+	//width: $call-navbar-size;
+	//height: auto;
+
+	svg {
+	  width: $call-bar-icon-size;
+	  height: $call-bar-icon-size;
+	}
+
+	.call-controls,
+	.call-container-controls {
+	  height: $call-navbar-size;
+	  line-height: $call-navbar-size;
+	  vertical-align: middle;
+
+	  //float: none;
+	  //height: auto;
+	  //margin-bottom: 20px;
+	  //text-align: center;
+
+	  & > * {
+		vertical-align: middle;
+		display: inline-block;
+	  }
+	}
+
+	.call-controls {
+	  float: left;
+
+	  .performing-indicator {
+		width: $call-bar-icon-size;
+		height: $call-bar-icon-size;
+		animation: blink 1.5s ease-in-out .5s infinite alternate;
+
+		svg {
+		  fill: red;
+		}
+	  }
+
+	  .handouts-loader {
+		input[type=file] {
+		  display: none;
+		  //visibility: hidden;
+		  //height: 28px;
+		  //line-height: 28px;
+		  //width: 0;
+		}
+	  }
+
+	  .add-handouts {
+		width: 36px;
+		height: 36px;
+		background: url("../images/icons/presentation.png");
+		border: 0;
+		background-size: cover;
+		padding: 0;
+		vertical-align: top;
+		margin: 0 9px;
+
+		&.persistent {
+		  position: relative;
+
+		  svg {
+			fill: #4d4d4d;
+			stroke-width: 5px;
+			stroke: white;
+			width: 19px;
+			height: 19px;
+			position: absolute;
+			top: 21px;
+			left: 19px;
+		  }
+		}
+	  }
+
+	  .mute {
+		background: url("../images/icons/speaker.png");
+		background-size: cover;
+		border: 0;
+		&.muted {
+		  background: url("../images/icons/mute.png");
+		  background-size: cover;
+		}
+	  }
+
+	  .leave-call {
+		background: transparent url('../images/icons/phone-call-reject-icon.png');
+		background-size: cover;
+		border: 0;
+		width: 40px;
+		height: 40px;
+		margin-right: 10px;
+	  }
+
+	  .chat {
+		background: transparent url('../images/icons/chat.png');
+		background-size: cover;
+		border: 0;
+		width: 40px;
+		height: 40px;
+		margin-left: 10px;
+	  }
+	}
+
+	.call-container-controls {
+	  float: right;
+
+	  button {
+		width: $call-bar-icon-size;
+		height: $call-bar-icon-size;
+		background: none;
+		border: 0;
+		padding: 0;
+		cursor: pointer;
+		margin: 7px;
+
+		&:hover,
+		&.active {
+		  background: none;
+
+		  svg {
+			fill: $color-primary-active;
+		  }
+		}
+
+		&.layout-main-selected,
+		&.layout-main-speaking,
+		&.layout-tiles {
+		  overflow: hidden;
+		  position: relative;
+
+		  svg {
+			width: 50px;
+			height: 50px;
+			margin-top: -6px;
+			margin-left: -11px;
+
+			&.speaking,
+			&.clicker {
+			  position: absolute;
+			  top: 10px;
+			  left: 20px;
+			  width: 13px;
+			  height: 14px;
+			}
+		  }
+		}
+	  }
+
+	  svg {
+		fill: $dove-gray;
+	  }
+	}
+  }
+
+  &.minimized {
+	background: rgba(255, 255, 255, 0.9);
+	box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+	position: absolute;
+	top: 4px;
+	right: 10px;
+	border: 1px silver solid;
+	border-radius: 7px;
+	padding: 10px;
+	box-sizing: content-box;
+	height: $call-navbar-size;
+
+	& > * {
+	  display: none;
+	}
+
+	.call-navigation-bar {
+	  display: block;
+	  padding: 0;
+	  box-sizing: content-box;
+	  height: $call-navbar-size;
+	  background: none;
+	  box-shadow: none;
+	}
+  }
+
+  &.maximized,
+  &.fullscreen {
+	/*width: calc(100% - 270px);
+	height: calc(100vh - 70px);*/
+	width: 100vw;
+	height: 100vh;
+	z-index: 13;
+	position: fixed;
+	bottom: 0px;
+	right: 0px;
+	border: 0;
+	border-radius: 0;
+	box-shadow: none;
+	background: white;
+
+	.call-navigation-bar {
+	  padding: 10px 0;
+	}
+  }
+
+  &.vertical-navigation {
+	.call-navigation-bar {
+	  width: $call-navbar-size;
+	  height: auto;
+
+	  .call-controls,
+	  .call-container-controls {
+		float: none;
+		height: auto;
+	  }
+
+	  .call-controls {
+		margin-bottom: 20px;
+		padding-bottom: 20px;
+		border-bottom: 1px silver solid;
+
+		.add-handouts {
+		  margin: 9px 0;
+		}
+
+		.leave-call {
+		  margin-right: 0px;
+		}
+
+		.chat {
+		  margin-left: 0px;
+		}
+	  }
+
+	  .delimiter {
+		width: 40px;
+		height: 1px;
+		margin-left: 0px;
+	  }
+
+	  .performing-indicator {
+		margin: 10px 0 10px;
+	  }
+	}
+
+	&.minimized {
+	  width: 40px;
+	  height: inherit;
+	}
+
+	&.maximized,
+	&.fullscreen {
+	  .call-navigation-bar {
+		position: absolute;
+		right: 0px;
+		margin-top: -20px;
+		height: calc(100% - 10px);
+		padding: 5px;
+	  }
+	}
+
+	.call-controls,
+	.call-container-controls {
+	  height: inherit;
+	  text-align: center;
+	}
+  }
+
+  &.horizontal-navigation {
+	//top: -65px;
+	//right: 10px;
+
+	.call-navigation-bar {
+	  height: $call-navbar-size;
+
+	  .performing-indicator {
+		margin: 0 10px 0 10px;
+	  }
+	}
+
+	&.minimized {
+	  top: 4px;
+	}
+
+	&.maximized,
+	&.fullscreen {
+	  .call-navigation-bar {
+		margin-top: -20px;
+		margin-left: -20px;
+		margin-right: -20px;
+		padding: 10px 15px;
+	  }
+	}
+  }
+
+  .call-navigation-bar {
+	.delimiter {
+	  width: 1px;
+	  height: 38px;
+	  margin: 0 5px;
+	  background: silver;
+	}
+
+	button.layout-split {
+	  width: 44px;
+	  height: 27px;
+
+	  svg.media {
+		width: 19px;
+		height: 19px;
+		display: block;
+		float: left;
+	  }
+
+	  svg.slides {
+		width: 19px;
+		height: 19px;
+		display: block;
+		float: left;
+		border: 1px #eee solid;
+		display: inline-block;
+		float: left;
+	  }
+	}
+
+	button.layout-media,
+	button.layout-handouts {
+	  position: relative;
+
+	  svg {
+		width: 28px;
+		height: 28px;
+	  }
+
+	  svg + svg {
+		width: 16px;
+		height: 16px;
+		bottom: 0;
+		right: 0;
+		position: absolute;
+		background: #eee;
+		border: 1px #eee solid;
+	  }
+	}
+  }
+
+  /*&.webinar {
+	.media-container {
+	  .my-media {
+		max-width: 320px;
+
+		@include mq($from: medium) {
+		  width: 25%;
+		}
+
+	  }
+	}
+
+	&.is-initiator {
+
+	}
+  }*/
+   &.webinar {
+	 .handouts-container {
+	   position: absolute;
+	   height: 100%;
+	   width: 100%;
+	   bottom: 0;
+	   right: 0;
+
+	   .handouts {
+		 position: absolute;
+		 display: block;
+		 width: 100%;
+	   }
+	 }
+
+	 .handouts-first {
+	   position: relative;
+	   height: auto;
+	   width: 100%;
+	   bottom: 0;
+	   right: 0;
+	 }
+
+	 &.is-initiator {
+	   .media-first {
+		 .handouts-container {
+		   .handouts {
+			 bottom: 0;
+		   }
+		 }
+
+		 .my-media {
+		   position: absolute;
+		   top: 10px;
+		 }
+	   }
+
+	   .split {
+		 .my-media {
+		   height: auto;
+		 }
+
+		 .handouts-container {
+		   position: relative;
+		   height: 100%;
+		   width: 100%;
+		   bottom: auto;
+		   right: auto;
+
+		   .handouts {
+			 position: relative;
+			 display: block;
+			 width: 100%;
+		   }
+		 }
+	   }
+
+	   .handouts-first {
+		 top: 0;
+
+		 .handouts-container {
+		   position: relative;
+		   height: auto;
+		   width: 100%;
+		   bottom: auto;
+		   top: 0;
+		   right: auto;
+
+		   .handouts {
+			 position: relative;
+			 display: block;
+			 width: 100%;
+		   }
+		 }
+
+		 .my-media {
+		   width: calc(100% - 24px);
+		   max-width: inherit;
+		   position: absolute;
+		   bottom: 10px;
+		   top: inherit;
+		   height: auto;
+		 }
+	   }
+
+	   .my-media {
+		 width: calc(100% - 24px);
+		 max-width: inherit;
+		 position: relative;
+		 bottom: inherit;
+		 top: 12px;
+		 height: calc(100% - 24px);
+		 bottom: inherit;
+		 top: 10px;
+
+		 .participant-media {
+		   width: 100%;
+		   height: 100%;
+
+		   video {
+			 width: 100%;
+			 height: 100%;
+			 position: relative;
+		   }
+		 }
+	   }
+	 }
+   }
+}
+
+.call-container.webinar .handouts-container {
+  position: relative;
+}
+
+.call-container.webinar .handouts-container .handouts {
+  position: relative;
+}
+
+.call-container.webinar .media-first .handouts-container .handouts {
+  position: absolute;
+  bottom: 0;
+}
+
+.call-container.webinar .handouts-first .handouts-container {
+  height: auto;
+}
+
+.call-container.voice {
+  .my-media {
+	display: none;
+  }
+
+  .media-container ul {
+	text-align: left;
+  }
+
+  .participant-media {
+	width: 200px;
+	height: 100px;
+  }
+}
